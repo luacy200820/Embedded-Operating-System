@@ -28,7 +28,7 @@ TaskList 的資料結構為 Linked List
 
 `main.c`  
 加入include細項  
-```c=
+```c
 #include "stdio.h"
 #include "stdlib.h"
 #include "FreeRTOS.h"
@@ -87,14 +87,14 @@ void Delay_App(void *pvParameters){
 }
 ```  
 `task.h`  
-```c=
+```c
 //宣告Taskmonitor 函式做為task control block的資訊
 UART_HandleTypeDef huart4;
 void Taskmonitor(void);
 ```
 `task.c`    
 
-```c=
+```c
 void print_pcb(TCB_t  *t, char *state) {
 	char Monitor_data[250]; 
 	memset(Monitor_data,'\0',sizeof(Monitor_data));
