@@ -19,7 +19,7 @@
 `
 main.c
 `
-```c=
+```c
 // Private includes
 #include "FreeRTOS.h"
 #include "task.h"
@@ -54,7 +54,7 @@ main.c
 #define LONG_TIME 0xffff
 ```
 
-```c=
+```c
 SemaphoreHandle_t xSemaphore=NULL;
 void MEMS_Write(uint8_t address,uint8_t data){
 	HAL_GPIO_WritePin(GPIOE, GPIO_PIN_3, GPIO_PIN_RESET);
