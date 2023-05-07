@@ -35,7 +35,7 @@ heap2.c
 * 適合用在雖然需要釋放記憶體但是每個task需要的TCB、Stack是相同的。這樣釋放後的記憶體空間就能直接被其他的task使用，可以避免記憶體破碎化。  
 
 main.c
-```c=
+```c
 int main(void)
 { 
 	...
@@ -93,7 +93,7 @@ void PrintTask(void const *argument) {
 
 heap2.c  
 **no merge -> output 1**
-```c=
+```c
 /*
  * Insert a block into the list of free blocks - which is ordered by size of
  * the block.  Small blocks at the start of the list and large blocks at the end
@@ -120,7 +120,7 @@ heap2.c
 }
 ```
 **merge -> output2**
-```c=
+```c
 #define prvInsertBlockIntoFreeList( pxBlockToInsert )								\
 {																					\
 	BlockLink_t * pxIterator;                                                                                                          \
@@ -173,7 +173,7 @@ heap2.c
 ```
 新增vPrintFreeList 函式，印出地址與block資訊  
   
-```c=
+```c
 
 void vPrintFreeList(void) {
 	char *TITLE = "StartAddress\t|heapSTRUCT_SIZE\t|xBlockSize\t|EndAddress\r\n";
@@ -198,7 +198,7 @@ void vPrintFreeList(void) {
 }
 ```
 task.h 修改內容: 宣告 huart2 變數以使用 UART 輸出文字到 Console  
-```c=
+```c
 #include "stm32f4xx_hal.h"
 
 extern UART_HandleTpyeDef huart2;
